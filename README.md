@@ -33,9 +33,9 @@ An automated, mobile-friendly invoicing and inventory logging system built on Go
 
 ### Mobile Workflow Demo
 <p align="center">
-  <img src="assets/MobileDemo.png" width="33%" alt="Mobile Invoicing Demo Part 1" />
-  <img src="assets/MobileDemo2.png" width="33%" alt="Mobile Invoicing Demo Part 2" />
-  <img src="assets/MobileDemo3.png" width="33%" alt="Mobile Invoicing Demo Part 2" />
+  <img src="assets/MobileDemo.png" width="30%" alt="Mobile Invoicing Demo Part 1" />
+  <img src="assets/MobileDemo2.png" width="30%" alt="Mobile Invoicing Demo Part 2" />
+  <img src="assets/MobileDemo3.png" width="30%" alt="Mobile Invoicing Demo Part 2" />
 </p>
 
 ---
