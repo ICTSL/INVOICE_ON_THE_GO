@@ -1,5 +1,3 @@
----
-
 ### File 2: `SETUP_GUIDE.md`
 
 ```markdown
