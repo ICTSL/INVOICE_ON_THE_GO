@@ -37,7 +37,7 @@ An automated, mobile-friendly invoicing and inventory logging system built on Go
   <img src="assets/MobileDemo2.png" width="30%" alt="Mobile Invoicing Demo Part 2" />
   <img src="assets/MobileDemo3.png" width="30%" alt="Mobile Invoicing Demo Part 2" />
 </p>
-
+Selecting a serial number populates the invoice template and after entering customer name, phone number, and email address; tapping on the checkbox in cell H1 sends the compiled and converted invoice to the specified email address
 ---
 
 ## Trigger Mechanisms
