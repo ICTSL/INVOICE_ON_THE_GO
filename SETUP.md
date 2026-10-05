@@ -1,3 +1,4 @@
+### File 2: `SETUP_GUIDE.md`
 
 # Workbook Setup & Formula Reference Guide
 
@@ -28,7 +29,8 @@ This sheet serves as the primary data entry interface and customer receipt layou
 #### Cell G1 (Validation Status Formula)
 Ensures customer email is valid and all selected items are available in inventory:
 ```excel
-=IF(AND(A9<>"", ISNUMBER(MATCH("*@*.*", A9, 0)), COUNTA(B14:B18)>0, COUNTIF(B14:B18, "") + SUMPRODUCT(--(ISNUMBER(MATCH(B14:B18, FILTER(INVENTORY!A2:A, INVENTORY!J2:J="Available"), 0)))) = 5), "OK", "NOT_READY") ```
+=IF(AND(A9<>"", ISNUMBER(MATCH("*@*.*", A9, 0)), COUNTA(B14:B18)>0, COUNTIF(B14:B18, "") + SUMPRODUCT(--(ISNUMBER(MATCH(B14:B18, FILTER(INVENTORY!A2:A, INVENTORY!J2:J="Available"), 0)))) = 5), "OK", "NOT_READY") 
+```
 
 Line Items Table (Rows 14 to 18)
 Apply these formulas across rows 14 through 18 (replace 14 with the respective row number):
