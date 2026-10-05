@@ -166,7 +166,7 @@ Follow these steps to deploy the backend automation script and authorize necessa
 2. Paste the code into the Apps Script editor.
 3. Replace the placeholder value in `DRIVE_FOLDER_ID` with your target Google Drive folder ID:
    ```javascript
-   const DRIVE_FOLDER_ID = "1Fh_CsckWmws5cXQdei9Ylj2xQUUXh4ZZ"; // Example ID
+   const DRIVE_FOLDER_ID = "1Fh_CsckWmws5cXQdei9Ylj2xQUUXh4ZZ"; // Example ID ```
 
 <p>
 <img src="assets/AppsScript2.png" width="30%" alt="Insert Button" />
