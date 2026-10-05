@@ -156,7 +156,7 @@ Follow these steps to deploy the backend automation script and authorize necessa
 2. In the top menu, click **Extensions > Apps Script**. Select your Google account or sign in.
 
 <p align="center">
-  <img src="assets/AppsScript1.png" width="40%" alt="Open Apps Script" />
+  <img src="assets/AppsScript1.png" width="50%" alt="Open Apps Script" />
 </p>
 
 3. Clear any default code in the editor tab (`Code.gs`).
@@ -169,7 +169,7 @@ Follow these steps to deploy the backend automation script and authorize necessa
     const DRIVE_FOLDER_ID = "1Fh_CsckWmws5cXQdei9Ylj2xQUUXh4ZZ"; // Example ID
 
 <p align="center">
-  <img src="assets/AppsScript2.png" width="30%" alt="Insert Button" />
+  <img src="assets/AppsScript2.png" width="60%" alt="Insert Button" />
 </p>
 
 ---
@@ -203,7 +203,7 @@ An installable trigger is required so that ticking cell **`H1`** on mobile can e
 When saving the trigger or running a function for the first time, Google will require OAuth authorization:
 
 <p align="center">
-  <img src="assets/AppsScripts5.png" width="60%" alt="Authorization required" />
+  <img src="assets/AppsScript5.png" width="60%" alt="Authorization required" />
 </p>
 
 1. A popup window titled **"Choose an account"** will appear. Select your Google account.
