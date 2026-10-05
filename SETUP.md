@@ -1,6 +1,5 @@
 ### File 2: `SETUP_GUIDE.md`
 
-```markdown
 # Workbook Setup & Formula Reference Guide
 
 This guide details the step-by-step creation of the Google Sheet workbook required for the ICTSL Invoice Dispatcher system.
