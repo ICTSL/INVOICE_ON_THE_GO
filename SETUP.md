@@ -63,17 +63,41 @@ Cell F22 (Grand Total):
 2. Sheet: INVENTORY
 Stores stock inventory records and availability statuses.
 
-Table Headers (Row 1)
-```
-ColumnHeader NameDescriptionASERIAL_NOUnique hardware serial numberBBRANDLaptop/Device ManufacturerCMODELModel Name/NumberDPROCESSORCPU specificationsEGENERATIONHardware GenerationFRAMInstalled RAMGSTORAGEStorage capacity and typeHCONDITIONGrade/ConditionIPRICEUnit PriceJSTATUSAvailability Status (Available or Sold)
-```
+### Table Headers (Row 1)
+
+| Column | Header Name | Description |
+| :--- | :--- | :--- |
+| **A** | `SERIAL_NO` | Unique hardware serial number |
+| **B** | `BRAND` | Laptop/Device Manufacturer |
+| **C** | `MODEL` | Model Name/Number |
+| **D** | `PROCESSOR` | CPU specifications |
+| **E** | `GENERATION` | Hardware Generation |
+| **F** | `RAM` | Installed RAM |
+| **G** | `STORAGE` | Storage capacity and type |
+| **H** | `CONDITION` | Grade/Condition |
+| **I** | `PRICE` | Unit Price |
+| **J** | `STATUS` | Availability Status (`Available` or `Sold`) |
+
+
 3. Sheet: SALES_LOG
 Stores processed sales records appended by Apps Script.
 
-Table Headers (Row 1)
-```
-ColumnHeader NameACUSTOMER_NAMEBPHONECEMAILDDATEEINVOICE_NOFBILL_NOGSERIAL_NUMBERSHITEM_DESCRIPTIONSISUBTOTALJVATKGRAND_TOTALLPDF_DRIVE_URL
-```
+### Table Headers (Row 1)
+
+| Column | Header Name |
+| :--- | :--- |
+| **A** | `CUSTOMER_NAME` |
+| **B** | `PHONE` |
+| **C** | `EMAIL` |
+| **D** | `DATE` |
+| **E** | `INVOICE_NO` |
+| **F** | `BILL_NO` |
+| **G** | `SERIAL_NUMBERS` |
+| **H** | `ITEM_DESCRIPTIONS` |
+| **I** | `SUBTOTAL` |
+| **J** | `VAT` |
+| **K** | `GRAND_TOTAL` |
+| **L** | `PDF_DRIVE_URL` |
 
 4. UI Elements Setup
 A. Mobile Tick Box
@@ -81,7 +105,11 @@ Select cell H1 on INVOICE_GENERATOR.
 
 Click Insert > Tick box.
 
-Add label in G1 or adjacent cell indicating SEND INVOICE.
+Add label in H2 or adjacent cell indicating SEND INVOICE. See image below.
+<p align="center">
+  <img src="assets/Insert_tickbox.png" width="60%" alt="Insert tickbox" />
+  <img src="assets/Insert_tickbox1.png" width="30%" alt="Insert tickbox" />
+</p>
 
 B. Desktop Button (Drawing)
 Go to Insert > Drawing.
@@ -91,6 +119,10 @@ Draw a rectangle shape, style it, and add text: "SEND INVOICE".
 Click Save and Close.
 
 Click the three dots menu (⋮) on the top-right of the drawing object.
+<p>
+<img src="assets/InsertButton.png" width="60%" alt="Insert Button" />
+<img src="assets/InsertButton1.png" width="30%" alt="Insert Button" />
+</p>
 
 Click Assign script and enter: generateAndDispatchInvoice.
 Done
@@ -112,3 +144,78 @@ Sends the PDF attachment via GmailApp and stores a copy in Google Drive.
 Updates inventory item statuses to "Sold" in INVENTORY!J:J and logs sales metadata into SALES_LOG.
 
 Clears form inputs, re-applies formula strings to prevent breaking sheet bindings, and unchecks cell H1.
+
+---
+
+## 5. Setting Up Google Apps Script
+
+Follow these steps to deploy the backend automation script and authorize necessary permissions.
+
+### A. Access Apps Script Editor
+1. Open your Google Spreadsheet in a web browser.
+2. In the top menu, click **Extensions > Apps Script**. Select your Google account or sign in. <p><img src="assets/AppsScript1.png" width="40%" alt="Open Apps Script" />
+</p>
+3. Clear any default code in the editor tab (`Code.gs`).
+
+### B. Paste and Configure the Code
+1. Copy the contents of `code.gs` from this repository.
+2. Paste the code into the Apps Script editor.
+3. Replace the placeholder value in `DRIVE_FOLDER_ID` with your target Google Drive folder ID:
+   ```javascript
+   const DRIVE_FOLDER_ID = "1Fh_CsckWmws5cXQdei9Ylj2xQUUXh4ZZ"; // Example ID
+<p>
+<img src="assets/AppsScript2.png" width="30%" alt="Insert Button" />
+</p>
+
+## 6. Configuring the Installable Trigger (Mobile Dispatch)
+
+An installable trigger is required so that ticking cell **`H1`** on mobile can execute email and PDF services without hitting Google's simple trigger security blocks.
+
+1. In the Apps Script left sidebar, click the **Triggers** icon (looks like an alarm clock ⏰).
+2. Click **+ Add Trigger** in the bottom-right corner.
+<p>
+<img src="assets/AppsScript3.png" width="60%" alt="Insert Button" />
+</p>
+3. Configure the trigger parameters:
+   * **Choose which function to run**: `installedOnEdit`
+   * **Choose which deployment should run**: `Head`
+   * **Select event source**: `From spreadsheet`
+   * **Select event type**: `On edit`
+4. Click **Save**.
+<p>
+<img src="assets/AppsScript4.png" width="60%" alt="Insert Button" />
+</p>
+
+---
+
+## 7. Granting OAuth Permissions
+
+When saving the trigger or running a function for the first time, Google will require OAuth authorization:
+<img src="assets/AppsScript5.png" width="60%" alt="Authorization required" />
+
+1. A popup window titled **"Choose an account"** will appear. Select your Google account.
+2. When prompted with **"Google hasn't verified this app"**, click **Advanced**.
+3. Click **Go to Untitled project (unsafe)** (or your project's custom name). <p>
+<img src="assets/AppsScript5a.png" width="60%" alt="Authorization " />
+<img src="assets/AppsScript5b.png" width="60%" alt="Authorization " />
+</p>
+4. Review the requested permissions (`GmailApp`, `DriveApp`, `SpreadsheetApp`) and click **Allow**.
+<p>
+<img src="assets/AppsScript6.png" width="60%" alt="Authorization" />
+</p>
+
+---
+
+## 8. Final Testing
+
+### Mobile Testing (Android)
+1. Open the **Google Sheets App** on your mobile device.
+2. Fill out invoice line items and customer details on `INVOICE_GENERATOR`.
+3. Confirm cell `G1` displays **`OK`**.
+4. Check cell **`H1`** (Tick Box).
+5. Verify the script generates the PDF, dispatches the email via Gmail, updates `INVENTORY` item statuses to `"Sold"`, logs the transaction in `SALES_LOG`, and resets cell `H1` to unchecked.
+
+### Desktop Testing
+* In your spreadsheet, click **Invoice System > Send Invoice** from the top menu, or click the assigned **SEND INVOICE** drawing button.
+If it runs successfully, it displays <img src="assets/Success.png.png" width="60%" alt="Success message" />
+Else, it displays the appropriate error message.
