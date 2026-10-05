@@ -155,8 +155,8 @@ Follow these steps to deploy the backend automation script and authorize necessa
 1. Open your Google Spreadsheet in a web browser.
 2. In the top menu, click **Extensions > Apps Script**. Select your Google account or sign in.
 
-<p>
-<img src="assets/AppsScript1.png" width="40%" alt="Open Apps Script" />
+<p align="center">
+  <img src="assets/AppsScript1.png" width="40%" alt="Open Apps Script" />
 </p>
 
 3. Clear any default code in the editor tab (`Code.gs`).
@@ -165,12 +165,14 @@ Follow these steps to deploy the backend automation script and authorize necessa
 1. Copy the contents of `code.gs` from this repository.
 2. Paste the code into the Apps Script editor.
 3. Replace the placeholder value in `DRIVE_FOLDER_ID` with your target Google Drive folder ID:
-   ```javascript
-   const DRIVE_FOLDER_ID = "1Fh_CsckWmws5cXQdei9Ylj2xQUUXh4ZZ"; // Example ID ```
 
-<p>
-<img src="assets/AppsScript2.png" width="30%" alt="Insert Button" />
+    const DRIVE_FOLDER_ID = "1Fh_CsckWmws5cXQdei9Ylj2xQUUXh4ZZ"; // Example ID
+
+<p align="center">
+  <img src="assets/AppsScript2.png" width="30%" alt="Insert Button" />
 </p>
+
+---
 
 ## 6. Configuring the Installable Trigger (Mobile Dispatch)
 
@@ -179,8 +181,8 @@ An installable trigger is required so that ticking cell **`H1`** on mobile can e
 1. In the Apps Script left sidebar, click the **Triggers** icon (looks like an alarm clock ⏰).
 2. Click **+ Add Trigger** in the bottom-right corner.
 
-<p>
-<img src="assets/AppsScript3.png" width="60%" alt="Insert Button" />
+<p align="center">
+  <img src="assets/AppsScript3.png" width="60%" alt="Insert Button" />
 </p>
 
 3. Configure the trigger parameters:
@@ -190,8 +192,8 @@ An installable trigger is required so that ticking cell **`H1`** on mobile can e
    * **Select event type**: `On edit`
 4. Click **Save**.
 
-<p>
-<img src="assets/AppsScript4.png" width="60%" alt="Insert Button" />
+<p align="center">
+  <img src="assets/AppsScript4.png" width="60%" alt="Insert Button" />
 </p>
 
 ---
@@ -200,21 +202,23 @@ An installable trigger is required so that ticking cell **`H1`** on mobile can e
 
 When saving the trigger or running a function for the first time, Google will require OAuth authorization:
 
-<img src="assets/AppsScript5.png" width="60%" alt="Authorization required" />
+<p align="center">
+  <img src="assets/AppsScripts5.png" width="60%" alt="Authorization required" />
+</p>
 
 1. A popup window titled **"Choose an account"** will appear. Select your Google account.
 2. When prompted with **"Google hasn't verified this app"**, click **Advanced**.
 3. Click **Go to Untitled project (unsafe)** (or your project's custom name).
 
-<p>
-<img src="assets/AppsScript5a.png" width="60%" alt="Authorization" />
-<img src="assets/AppsScript5b.png" width="60%" alt="Authorization" />
+<p align="center">
+  <img src="assets/AppsScript5a.png" width="48%" alt="Authorization step A" />
+  <img src="assets/AppsScript5b.png" width="48%" alt="Authorization step B" />
 </p>
 
 4. Review the requested permissions (`GmailApp`, `DriveApp`, `SpreadsheetApp`) and click **Allow**.
 
-<p>
-<img src="assets/AppsScript6.png" width="60%" alt="Authorization" />
+<p align="center">
+  <img src="assets/AppsScript6.png" width="60%" alt="Authorization" />
 </p>
 
 ---
@@ -230,8 +234,11 @@ When saving the trigger or running a function for the first time, Google will re
 
 ### Desktop Testing
 * In your spreadsheet, click **Invoice System > Send Invoice** from the top menu, or click the assigned **SEND INVOICE** drawing button.
-If it runs successfully, it displays
 
-<img src="assets/Success.png" width="60%" alt="Success message" />
+If it runs successfully, it displays:
+
+<p align="center">
+  <img src="assets/Success.png" width="60%" alt="Success message" />
+</p>
 
 Else, it displays the appropriate error message.
