@@ -153,7 +153,9 @@ Follow these steps to deploy the backend automation script and authorize necessa
 
 ### A. Access Apps Script Editor
 1. Open your Google Spreadsheet in a web browser.
-2. In the top menu, click **Extensions > Apps Script**. Select your Google account or sign in. <p><img src="assets/AppsScript1.png" width="40%" alt="Open Apps Script" />
+2. In the top menu, click **Extensions > Apps Script**. Select your Google account or sign in. 
+<p>
+<img src="assets/AppsScript1.png" width="40%" alt="Open Apps Script" />
 </p>
 3. Clear any default code in the editor tab (`Code.gs`).
 
@@ -195,7 +197,8 @@ When saving the trigger or running a function for the first time, Google will re
 
 1. A popup window titled **"Choose an account"** will appear. Select your Google account.
 2. When prompted with **"Google hasn't verified this app"**, click **Advanced**.
-3. Click **Go to Untitled project (unsafe)** (or your project's custom name). <p>
+3. Click **Go to Untitled project (unsafe)** (or your project's custom name). 
+<p>
 <img src="assets/AppsScript5a.png" width="60%" alt="Authorization " />
 <img src="assets/AppsScript5b.png" width="60%" alt="Authorization " />
 </p>
@@ -217,5 +220,6 @@ When saving the trigger or running a function for the first time, Google will re
 
 ### Desktop Testing
 * In your spreadsheet, click **Invoice System > Send Invoice** from the top menu, or click the assigned **SEND INVOICE** drawing button.
-If it runs successfully, it displays <img src="assets/Success.png.png" width="60%" alt="Success message" />
+If it runs successfully, it displays 
+<img src="assets/Success.png" width="60%" alt="Success message" />
 Else, it displays the appropriate error message.
