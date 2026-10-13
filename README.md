@@ -30,6 +30,11 @@ An automated, mobile-friendly invoicing and inventory logging system built on Go
 
 ### Sample Invoice Output
 ![Sample Invoice](assets/InvoiceSample.png)
+### Video Demonstrations
+
+[![Watch Part 1: Desktop Workflow](https://img.youtube.com/vi/Hk1ECY-LRv8/hqdefault.jpg)](https://www.youtube.com/watch?v=Hk1ECY-LRv8)
+
+[![Watch Part 2: Mobile Dispatch](https://img.youtube.com/vi/25STZ-szt2Q/hqdefault.jpg)](https://www.youtube.com/watch?v=25STZ-szt2Q)
 
 ### Mobile Workflow Demo
 <p align="center">
